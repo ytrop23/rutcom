@@ -1,0 +1,51 @@
+version: '3'
+services:
+  apachephp:
+    container_name: ${projectname}_apachephp
+    build:
+      context: ${buildcontext}
+      args:
+        uid: ${UID}
+      dockerfile: ${dockerfile}
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${GID}
+      - APP_URL=${url}
+    working_dir: /var/www/html
+    ports:
+      - ${extport}:${innerport}
+      - 9001:9000
+    volumes:
+      - ../${projectname}:/var/www/html
+      - ../logs/apache2:/var/log/apache2
+      - ../logs/php:/var/log/php
+      - ../logs/phpunit:/var/log/phpunit
+    networks:
+      project2dawnetwork:
+        ipv4_address: ${ipv4_apache}
+  mysql:
+    container_name: ${projectname}_mysql
+    build:
+      context: ./db
+      dockerfile: MySql/Dockerfile
+    environment: 
+      - MYSQL_ROOT_USER=${MYSQL_ROOT_USER}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_OUTPORT=${MYSQL_OUTPORT}
+    ports:
+      - "${MYSQL_OUTPORT}:3306"
+    volumes:
+      - ./db/SQLScript:/docker-entrypoint-initdb.d/
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      project2dawnetwork:
+        ipv4_address: ${ipv4_mysql}
+networks:
+  project2dawnetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: ${subnet}
