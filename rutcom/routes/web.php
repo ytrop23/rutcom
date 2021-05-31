@@ -6,7 +6,8 @@ use App\Http\Livewire\Clients;
 use App\Http\Livewire\Calendar;
 use App\Http\Controllers\TimeControl;
 use App\Http\Controllers\ChartController;
-use app\Http\Livewire\ListAppointments;
+use App\Http\Livewire\Appointments;
+use App\Http\Livewire\Listappointments;
 
 
 /*
@@ -34,8 +35,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/clients', Clients::class
 )->name('clients');
 Route::middleware(['auth:sanctum', 'verified'])->get('/calendar', Calendar::class
 )->name('calendar');
+Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Appointments::class
+)->name('appointments');
 Route::resource('timecontrol',TimeControl::class);
 Route::get('line-chart', [ChartController::class, 'showChart']);
+Route::get('appointments', Listappointments::class)->appointments;
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', ListAppointments::class
-)->name('appointments');
+
