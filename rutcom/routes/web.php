@@ -8,6 +8,7 @@ use App\Http\Controllers\TimeControl;
 use App\Http\Controllers\ChartController;
 use App\Http\Livewire\Appointments;
 use App\Http\Livewire\Listappointments;
+use App\Http\Livewire\CreateAppointmentForm ;
 
 
 /*
@@ -39,6 +40,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Appointmen
 )->name('appointments');
 Route::resource('timecontrol',TimeControl::class);
 Route::get('line-chart', [ChartController::class, 'showChart']);
-Route::get('appointments', Listappointments::class)->appointments;
-
+Route::get('appointments', Listappointments::class)->name('appointments');
+Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
 
