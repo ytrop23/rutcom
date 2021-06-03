@@ -97,7 +97,11 @@
                             </div>
                             <div class="card-footer">
                                 <button type="button" class="btn btn-secondary"><i class="mr-1 fa fa-times"></i> Cancel</button>
-                                <button id="submit" type="submit" class="btn btn-primary"><i class="mr-1 fa fa-save"></i> Save</button>
+                                <div class="flex justify-between mt-8 text-xl">
+                                    <x-jet-button wire:click.prevent="createAppointment">
+                                        Save
+                                    </x-jet-button>
+                                </div>
                             </div>
                         </div>
                     </form>

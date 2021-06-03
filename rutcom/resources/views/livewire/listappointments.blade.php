@@ -100,7 +100,7 @@
                       <span class="badge badge-{{ $appointment->status_badge }}">{{ $appointment->status }}</span>
                     </td>
       				      <td>
-      				      	<a href="{{ route('appointments.edit', $appointment) }}">
+      				      	<a href="">
       				      		<i class="mr-2 fa fa-edit"></i>
       				      	</a>
 
