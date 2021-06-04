@@ -96,7 +96,7 @@
 
                                 <div
                                     class="flex h-6 px-2 text-sm font-semibold justify-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400 h-7 w-7"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-400 h-7 w-7"
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -128,7 +128,7 @@
 
                                 <div
                                     class="flex h-6 px-2 text-sm font-semibold justify-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400 h-7 w-7"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-400 h-7 w-7"
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -160,7 +160,7 @@
 
                                 <div
                                     class="flex h-6 px-2 text-sm font-semibold justify-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-400 h-7 w-7"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-400 h-7 w-7"
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
