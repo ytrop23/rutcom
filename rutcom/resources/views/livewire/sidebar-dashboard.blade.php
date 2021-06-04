@@ -2,10 +2,10 @@
 [
     ['href' => '/dashboard','name'=>'dashborad','text'=>'Dashboard'],
     ['href'=>'/users','name'=>'users','text'=>'Users'],
-    ['href'=>'/calendar','name'=>'users','text'=>'Calendar'],
-    ['href'=>'/report','name'=>'users','text'=>'Report'],
-    ['href'=>'/clients','name'=>'users','text'=>'Clients'],
-    ['href'=>'/timecontrol','name'=>'users','text'=>'TimeControl'],
+    ['href'=>'/calendar','name'=>'calendar','text'=>'Calendar'],
+    ['href'=>'/appointments','name'=>'appointments','text'=>'Appointments'],
+    ['href'=>'/clients','name'=>'clients','text'=>'Clients'],
+    ['href'=>'/timecontrol','name'=>'timecontrol','text'=>'TimeControl'],
 ])
 
     <div class="flex-col md:flex md:flex-row md:min-h-screen">

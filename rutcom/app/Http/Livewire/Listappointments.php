@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Appointment;
+use App\Http\Livewire\AdminComponent;
 
 class Listappointments extends Component
 {

@@ -6,6 +6,14 @@
 
     </x-slot>
 
-        <livewire:sidebar-dashboard>
 
+            <div class="content">
+                <div class="container-fluid">
+                <div class="row">
+                    <livewire:appointments-count />
+                  </div>
+                </div>
+              </div>
+
+              </div>
 </x-app-layout>

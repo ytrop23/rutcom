@@ -5,14 +5,9 @@
     <div class="container-fluid">
       <div class="mb-2 row">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Appointments</h1>
+          <h3 class="m-0 text-dark">Appointments</h3>
         </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active">Appointments</li>
-          </ol>
-        </div><!-- /.col -->
+
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
@@ -27,7 +22,7 @@
             <div>
                 <a href="{{ route('appointments.create') }}">
 
-                <button class="btn btn-primary"><i class="mr-1 fa fa-plus-circle"></i> Add New Appointment</button>
+                <button class= 'inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25'> Add New Appointment</button>
               </a>
 
               @if ($selectedRows)
@@ -100,8 +95,8 @@
                       <span class="badge badge-{{ $appointment->status_badge }}">{{ $appointment->status }}</span>
                     </td>
       				      <td>
-      				      	<a href="">
-      				      		<i class="mr-2 fa fa-edit"></i>
+                            <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-gray-800 rounded-lg focus:shadow-outline hover:bg-gray-800" href="{{ route('appointments.edit', $appointment) }}">Edit</a>
+      				      	<a href="{{ route('appointments.edit', $appointment) }}">
       				      	</a>
 
       				      	<a href="" wire:click.prevent="confirmAppointmentRemoval({{ $appointment->id }})">

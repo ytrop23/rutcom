@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 use App\Models\Client;
+use App\Models\Appointment;
 use Livewire\WithPagination;
 use Livewire\Component;
 
