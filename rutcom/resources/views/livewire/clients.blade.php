@@ -83,7 +83,10 @@
               <div class="text-sm text-gray-500">{{ $client->address}}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">{{ $client->active}}</div>
+                @livewire('toggle-button', [
+                    'model' => $client,
+                    'field' => 'active',
+                ])
               </td>
             <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                 <button
@@ -154,13 +157,6 @@
                         Address
                     </label>
                     <input wire:model.defer="client.address"
-                           class="w-full py-2 pl-2 pr-4 mt-2 text-sm border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"/>
-                </div>
-                <div class="w-full py-4 mb-4 border-b">
-                    <label class="block text-sm font-medium text-gray-700" for="title">
-                        Active
-                    </label>
-                    <input wire:model.defer="client.active"
                            class="w-full py-2 pl-2 pr-4 mt-2 text-sm border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"/>
                 </div>
                 <div class="ml-auto">
