@@ -30,7 +30,11 @@ class CreateAppointmentForm extends Component
 
 		Appointment::create($this->state);
 
-		$this->dispatchBrowserEvent('alert', ['message' => 'Appointment created successfully!']);
+		$this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record added successfully',
+            'text' => '',
+        ]);
 	}
 
     public function render()

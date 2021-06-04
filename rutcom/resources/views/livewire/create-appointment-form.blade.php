@@ -119,9 +119,10 @@
     </div>
 
 
-
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     @push('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
     <script>
         ClassicEditor
@@ -139,7 +140,34 @@
                 .catch( error => {
                         console.error( error );
                 } );
+                window.addEventListener('swal:modal', event => {
+            swal({
+                title: event.detail.title,
+                text: event.detail.text,
+                icon: event.detail.type,
+            });
+        });
+
+        window.addEventListener('swal:confirm', event => {
+            swal({
+                title: event.detail.title,
+                text: event.detail.text,
+                icon: event.detail.type,
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.livewire.emit('delete', event.detail.id);
+                    }
+                });
+        });
     </script>
+
+
+
+
     @endpush
+
 </div>
 
