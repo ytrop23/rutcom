@@ -35,9 +35,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/clients', Clients::class
 )->name('clients');
 Route::middleware(['auth:sanctum', 'verified'])->get('/calendar', Calendar::class
 )->name('calendar');
+Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Listappointments::class
+)->name('appointments');
 Route::resource('timecontrol',TimeControl::class);
 Route::get('line-chart', [ChartController::class, 'showChart']);
-Route::get('appointments', Listappointments::class)->name('appointments');
+//Route::get('appointments', Listappointments::class)->name('appointments');
 Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
 Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointments.edit');
 

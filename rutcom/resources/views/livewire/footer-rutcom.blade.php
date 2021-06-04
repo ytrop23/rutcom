@@ -3,7 +3,7 @@
    <footer class="text-muted">
     <nav class="navbar fixed-bottom navbar-light bg-light">
 
-        <div class="flex flex-col max-w-6xl px-3 pt-5 pb-5 m-auto text-sm text-gray-800 border-t md:flex-row">
+        <div class="flex px-3 pt-3 pb-3 m-auto text-sm text-gray-800 border-t md:flex-row">
             <div class="mt-2">© Rutcom Copyright 2021. All Rights Reserved.</div>
             <div class="flex flex-row mt-2 md:flex-auto md:flex-row-reverse">
                <a href="/#" class="w-6 mx-1">
