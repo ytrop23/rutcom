@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Laravel Google Chart Implementation Example</title>
-</head>
+
 
 <body class="antialiased">
     <div id="linechart" style="width: 500px; height: 250px"></div>
