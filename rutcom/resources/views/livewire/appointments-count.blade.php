@@ -170,7 +170,7 @@
                 </div>
                 <div class="col-span-12 mt-5">
                     <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
-                        <div class="p-4 bg-white shadow-lg" id="linechart"></div>
+                        <livewire:chartline>
                         <div class="bg-white shadow-lg" id="chartpie"></div>
                     </div>
                 </div>
