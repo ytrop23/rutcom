@@ -18,7 +18,7 @@ class ChartClients extends Component
     ->get();
 
 
-$res[] = ['Year', 'users'];
+$res[] = ['Year', 'Clients'];
 foreach ($populationClients as $key => $val) {
 $res[++$key] = [$val->year, (int)$val->count];
 }

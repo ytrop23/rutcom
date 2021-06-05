@@ -18,7 +18,7 @@ class Chartline extends Component
     ->get();
 
 
-$res[] = ['Year', 'users'];
+$res[] = ['Year', 'Users'];
 foreach ($population as $key => $val) {
 $res[++$key] = [$val->year, (int)$val->count];
 }

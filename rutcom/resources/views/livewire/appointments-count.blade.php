@@ -174,7 +174,13 @@
                         <livewire:chart-clients>
                     </div>
                 </div>
-
+                <div class="col-span-12 mt-5">
+                    <div class="grid grid-cols-1 gap-2 lg:grid-cols-1">
+                        <div class="p-4 bg-white rounded-lg shadow-lg">
+                            <livewire:rutcom-map>
+                        </div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
