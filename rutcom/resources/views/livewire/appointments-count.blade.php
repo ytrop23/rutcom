@@ -171,7 +171,7 @@
                 <div class="col-span-12 mt-5">
                     <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
                         <livewire:chartline>
-                        <div class="bg-white shadow-lg" id="chartpie"></div>
+                        <livewire:chart-clients>
                     </div>
                 </div>
 

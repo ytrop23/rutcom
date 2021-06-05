@@ -20,7 +20,7 @@ class Clients extends Component{
         'client.dni' => 'required',
         'client.email' => 'required',
         'client.address' => 'required',
-        'client.active' => 'required',
+
 
 
 
