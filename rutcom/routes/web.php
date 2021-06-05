@@ -7,7 +7,7 @@ use App\Http\Livewire\Calendar;
 use App\Http\Controllers\TimeControl;
 use App\Http\Controllers\ChartController;
 use App\Http\Livewire\Listappointments;
-use App\Http\Controllers\ClientsViews;
+use App\Http\Livewire\RutcomMap;
 use App\Http\Livewire\CreateAppointmentForm ;
 use App\Http\Livewire\UpdateAppointmentForm ;
 
@@ -38,12 +38,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/calendar', Calendar::clas
 )->name('calendar');
 Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Listappointments::class
 )->name('appointments');
-//Route::middleware(['auth:sanctum', 'verified'])->get('/routes', RutcomMap::class
-//)->name('routes');
+Route::middleware(['auth:sanctum', 'verified'])->get('/routes', RutcomMap::class
+)->name('routes');
 
 
 Route::resource('timecontrol',TimeControl::class);
 Route::get('line-chart', [ChartController::class, 'showChart']);
 Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
 Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointments.edit');
-Route::get('routes', [ClientsViews::class, 'index']);
+
