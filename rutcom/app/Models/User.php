@@ -61,4 +61,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getStatusBadgeAttribute()
+    {
+    	$badges = [
+    		'User' => 'primary',
+    		'Admin' => 'success',
+    	];
+
+    	return $badges[$this->status];
+    }
 }

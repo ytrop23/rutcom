@@ -6,6 +6,7 @@
     ['href'=>'/appointments','name'=>'appointments','text'=>'Appointments'],
     ['href'=>'/clients','name'=>'clients','text'=>'Clients'],
     ['href'=>'/timecontrol','name'=>'timecontrol','text'=>'TimeControl'],
+    ['href'=>'/routes','name'=>'routes','text'=>'Routes']
 ])
 
     <div class="flex-col md:flex md:flex-row md:min-h-screen">
@@ -24,20 +25,6 @@
             <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href={{ __($link['href'])}}> {{ __($link['text'])}}</a>
 
             @endforeach
-
-            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-              <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                <span>Routes</span>
-                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
-                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
-                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
-                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
-                </div>
-              </div>
-            </div>
           </nav>
     </div>
 
@@ -54,11 +41,11 @@
                         <div class="p-5">
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
-                                    <h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3>
+                                    <h3 wire:loading.delay.remove>{{ $usersCount }}</h3>
                                     <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
-                                        <option value="scheduled">Scheduled</option>
-                                        <option value="closed">Closed</option>
+                                        <option value="scheduled">User</option>
+                                        <option value="closed">Admin</option>
                                     </select>
                                 </div>
 
@@ -74,9 +61,9 @@
                             </div>
                             <div class="flex-1 w-full ml-2">
                                 <div>
-                                    <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3></div>
+                                    <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $usersCount }}</h3></div>
 
-                                    <div class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Appointments</div>
+                                    <div class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Users</div>
                                 </div>
                             </div>
                         </div>
@@ -86,29 +73,32 @@
                         <div class="p-5">
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
-                                    <h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3>
+                                    <h3 wire:loading.delay.remove>{{ $clientsCount}}</h3>
                                     <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
-                                        <option value="scheduled">Scheduled</option>
-                                        <option value="closed">Closed</option>
+                                        <option value="scheduled">Potential</option>
+                                        <option value="closed">VIP</option>
                                     </select>
                                 </div>
 
                                 <div
                                     class="flex h-6 px-2 text-sm font-semibold justify-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-400 h-7 w-7"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-600 h-7 w-7"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                                </svg>
                                 </div>
                             </div>
                             <div class="flex-1 w-full ml-2">
                                 <div>
-                                    <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3></div>
+                                    <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $clientsCount}}</h3></div>
 
-                                    <div class="flex h-6 px-2 text-xl font-semibold text-gray-800 bg-blue-500 rounded justify-items-center">Appointments</div>
+                                    <div class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Clients</div>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +130,7 @@
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3></div>
 
-                                    <div class="flex h-6 px-2 text-xl font-semibold text-gray-800 bg-blue-500 rounded justify-items-center">Appointments</div>
+                                    <div class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Appointments</div>
                                 </div>
                             </div>
                         </div>
@@ -172,11 +162,17 @@
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8"><h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3></div>
 
-                                    <div class="flex h-6 px-2 text-xl font-semibold text-gray-800 bg-blue-500 rounded justify-items-center">Appointments</div>
+                                    <div class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">Appointments</div>
                                 </div>
                             </div>
                         </div>
                     </a>
+                </div>
+                <div class="col-span-12 mt-5">
+                    <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+                        <div class="p-4 bg-white shadow-lg" id="linechart"></div>
+                        <div class="bg-white shadow-lg" id="chartpie"></div>
+                    </div>
                 </div>
 
             </div>
