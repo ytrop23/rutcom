@@ -25,6 +25,7 @@ class Client extends Model
         'dni',
         'email',
         'active',
+        'status',
         'address',
         'description',
         'latitude',

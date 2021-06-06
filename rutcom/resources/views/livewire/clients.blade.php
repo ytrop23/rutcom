@@ -159,6 +159,16 @@
                     <input wire:model.defer="client.address"
                            class="w-full py-2 pl-2 pr-4 mt-2 text-sm border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"/>
                 </div>
+                <div class="w-full">
+                    <label class="block text-sm font-medium text-gray-700" for="title">
+                        Status
+                    </label>
+                    <select wire:model.defer="client.status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="User">VIP</option>
+                        <option value="Admin">Potencial</option>
+
+                    </select>
+                </div>
                 <div class="ml-auto">
                     <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
                             type="submit">{{ $client->id ? 'Save Changes' : 'Save' }}

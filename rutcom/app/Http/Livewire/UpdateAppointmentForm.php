@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Livewire;
+
 use App\Models\Appointment;
 use App\Models\Client;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
-
 class UpdateAppointmentForm extends Component
 {
-
-    public $state = [];
+	public $state = [];
 
 	public $appointment;
 
@@ -40,8 +39,11 @@ class UpdateAppointmentForm extends Component
 
 		$this->dispatchBrowserEvent('alert', ['message' => 'Appointment updated successfully!']);
 	}
+
     public function render()
-    {   $clients = Client::all();
+    {
+    	$clients = Client::all();
+
         return view('livewire.update-appointment-form', [
         	'clients' => $clients,
         ]);
