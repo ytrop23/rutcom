@@ -11,7 +11,7 @@ class ToggleButton extends Component
 
     public  $isActive;
 
-    public $designTemplate = 'bootstrap';
+
 
     public function mount()
     {

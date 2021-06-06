@@ -59,6 +59,11 @@ class UsersTable extends Component
         $this->showModal = true;
         $this->userid= $userid;
         $this->user = User::find($userid);
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record updated successfully',
+            'text' => '',
+        ]);
     }
 
     public function create()
@@ -66,6 +71,11 @@ class UsersTable extends Component
         $this->showModal = true;
         $this->user = null;
         $this->userid= null;
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record added successfully',
+            'text' => '',
+        ]);
     }
 
     public function save()

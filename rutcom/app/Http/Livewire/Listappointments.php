@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Appointment;
-use App\Http\Livewire\AdminComponent;
+
 
 class Listappointments extends Component
 {
@@ -91,6 +91,25 @@ class Listappointments extends Component
 
 		$this->reset(['selectPageRows', 'selectedRows']);
 	}
+
+    public function edit($appointmentid){
+        $this->showModal = true;
+        $this->appointmentid= $appointmentid;
+        $this->appointment = Appointment::find($appointmentid);
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record updated successfully',
+            'text' => '',
+        ]);
+    }
+
+    public function delete($id){
+        $appointment = Appointment::find($id);
+        if ($appointment) {
+            $appointment->delete();
+        }
+    }
+
 
     public function render()
 

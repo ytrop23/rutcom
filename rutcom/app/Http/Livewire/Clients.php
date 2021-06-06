@@ -55,12 +55,22 @@ class Clients extends Component{
         $this->showModal = true;
         $this->clientid= $clientid;
         $this->client = Client::find($clientid);
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record updated successfully',
+            'text' => '',
+        ]);
     }
 
     public function create(){
         $this->showModal = true;
         $this->client = null;
         $this->clientid= null;
+        $this->dispatchBrowserEvent('swal:modal', [
+            'type' => 'success',
+            'title' => 'Record added successfully',
+            'text' => '',
+        ]);
     }
 
     public function save(){

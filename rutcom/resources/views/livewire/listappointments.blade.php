@@ -90,13 +90,16 @@
                                   <span class="badge badge-{{ $appointment->status_badge }}">{{ $appointment->status }}</span>
                                 </td>
                                         <td>
-                                        <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-gray-800 rounded-lg focus:shadow-outline hover:bg-gray-800" href="{{ route('appointments.edit', $appointment) }}">Edit</a>
-                                            <a href="{{ route('appointments.edit', $appointment) }}">
-                                            </a>
+                                            <button
+                                            class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
+                                            wire:click.prevent="edit({{ $appointment->id }})">Edit
+                                        </button>
 
-                                            <a href="" wire:click.prevent="confirmAppointmentRemoval({{ $appointment->id }})">
-                                                <i class="fa fa-trash text-danger"></i>
-                                            </a>
+                                        <button
+                                        class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
+                                        wire:click.prevent="delete({{ $appointment->id }})"
+                                        onclick="confirm('Are you sure?') || event.stopImmediatePropagation()">Delete
+                                    </button>
                                         </td>
                                       </tr>
                               @endforeach
@@ -113,16 +116,12 @@
                 </div><!-- /.container-fluid -->
               </div>
         </div>
+
+
+
+
+
+
+
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
