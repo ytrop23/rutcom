@@ -17,6 +17,7 @@ class UsersTable extends Component
 
     protected $rules = [
         'user.role_id' => 'required',
+        'user.status'=>'required',
 
     ];
     protected $queryString = [

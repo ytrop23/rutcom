@@ -20,6 +20,7 @@ class ClientSeeder extends Seeder
             'active' => true,
             'address' => 'Calle El Peso 10 1400 Lucena Cordoba',
             'description' => 'Proof',
+            'status'=>'VIP',
             'latitude' => null,
             'longitude' => null
         ]);

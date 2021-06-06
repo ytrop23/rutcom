@@ -47,7 +47,7 @@
                   Teams
                 </th>
                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                    Roles
+                    Status
                   </th>
                 <th scope="col" class="relative px-6 py-3">
                   <span class="sr-only">Edit</span>
@@ -80,7 +80,20 @@
                   <div class="text-sm text-gray-500">{{ $user->allteams()->pluck('name')->join(', ') }}</div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="text-sm text-gray-500">{{ $user->role_id}}</div>
+                    <div class="flex text-green-500">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    class="w-5 h-5 mr-1" fill="none"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                                </svg>
+                        <span class="flex items-center">
+                        {{ $user->status}}
+                        </span>
+                    </div>
                   </td>
                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                     <button
@@ -132,10 +145,13 @@
                         </div>
                         <div class="w-full">
                             <label class="block text-sm font-medium text-gray-700" for="title">
-                                Role
+                                Status
                             </label>
-                            <input wire:model.defer="user.role_id"
-                                   class="w-full py-2 pl-2 pr-4 mt-2 text-sm border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"/>
+                            <select wire:model.defer="user.status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+
+                            </select>
                         </div>
                         <div class="ml-auto">
                             <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"

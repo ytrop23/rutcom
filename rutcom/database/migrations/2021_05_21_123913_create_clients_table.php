@@ -20,8 +20,8 @@ class CreateClientsTable extends Migration
             $table->string('email')->unique();
             $table->longText('description')->nullable();
             $table->string('address')->nullable();
-            $table->decimal('latitude', total:8, places:6)->nullable();
-            $table->decimal('longitude', total: 9, places: 6)->nullable();
+            $table->decimal('latitude')->nullable();
+            $table->decimal('longitude')->nullable();
             $table->boolean('active')->default(0);
             $table->string('status');
             $table->text('profile_photo_path')->nullable();

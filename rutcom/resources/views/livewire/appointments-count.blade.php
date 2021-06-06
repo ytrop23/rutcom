@@ -44,8 +44,8 @@
                                     <h3 wire:loading.delay.remove>{{ $usersCount }}</h3>
                                     <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
-                                        <option value="scheduled">User</option>
-                                        <option value="closed">Admin</option>
+                                        <option value="User">User</option>
+                                        <option value="Admin">Admin</option>
                                     </select>
                                 </div>
 
