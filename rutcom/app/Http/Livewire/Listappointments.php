@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Appointment;
 use App\Http\Livewire\AdminComponent;
 
 class Listappointments extends Component
 {
-
+    use WithPagination;
     protected $listeners = ['deleteConfirmed' => 'deleteAppointment'];
 
 	public $appointmentIdBeingRemoved = null;
