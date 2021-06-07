@@ -112,8 +112,8 @@
                     </div>
                 </div>
             </div>
-                  <!-- /.row -->
-        </div><!-- /.container-fluid -->
+
+        </div>
 
         <div class="@if (!$showModal) hidden @endif items-center justify-center fixed left-0 bottom-0 w-full h-full bg-gray-800 bg-opacity-90">
             <div class="w-1/2 bg-white rounded-lg">
