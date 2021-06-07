@@ -8,27 +8,22 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'client_id',
+        'date',
+        'time',
+        'note',
+        'status',
 
-    protected $casts = [
-    	'date' => 'datetime',
-    	'time' => 'datetime',
-    ];
+        ];
+
 
     public function client()
     {
     	return $this->belongsTo(Client::class);
     }
 
-    public function getStatusBadgeAttribute()
-    {
-    	$badges = [
-    		'SCHEDULED' => 'primary',
-    		'CLOSED' => 'success',
-    	];
-
-    	return $badges[$this->status];
-    }
+   
 
     public function getDateAttribute($value)
     {
