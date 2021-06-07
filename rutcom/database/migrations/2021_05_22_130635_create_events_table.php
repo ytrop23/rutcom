@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('start');
+            $table->string('status')->default(null)->nullable();
             $table->timestamps();
         });
     }

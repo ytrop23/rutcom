@@ -17,7 +17,8 @@ class Tasks extends Component
 
         'event.title' => 'required',
         'event.start' => 'required',
-        
+        'event.status' => 'required',
+
 
 
 
@@ -32,7 +33,7 @@ class Tasks extends Component
     public $search= '';
     public $perPage='5';
 
-    
+
 
     public function clear() {
         $this->search = '';
@@ -84,7 +85,7 @@ class Tasks extends Component
         }
     }
     public function render()
-    {   
+    {
         return view('livewire.tasks',[
             'events' => Event::where('title','LIKE',"%{$this->search}%")
             ->orWhere('start','LIKE',"%{$this->search}%")

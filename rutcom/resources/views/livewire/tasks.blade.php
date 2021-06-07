@@ -55,6 +55,10 @@
                                                     class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                                     Start
                                                 </th>
+                                                <th scope="col"
+                                                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                Status
+                                            </th>
                                                 <th scope="col" class="relative px-6 py-3">
                                                     <span class="sr-only">Edit</span>
                                                 </th>
@@ -66,21 +70,29 @@
                                             @foreach ($events as $event)
                                             <tr>
                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                                        <div class="text-sm text-gray-500">{{ $event->title}}</div>
-                                                      
+
+                                                <div class="text-sm text-gray-500"> {{ $event->title}}</div>
+
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class="text-sm text-gray-500">{{ $event->start}}</div>
                                                 </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex text-green-500">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                        <span class="flex items-center">
+                                                            {{ $event->status}}
+                                                        </span>
+                                                    </div>
+                                                </td>
                                                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                                                     <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-gray-800 rounded-lg focus:shadow-outline hover:bg-gray-800"
-                                                    href="{{ route('calendar') }}">View</a>           
+                                                    href="{{ route('calendar') }}">View</a>
                                                     <button
                                                         class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
                                                         wire:click.prevent="edit({{ $event->id }})">Edit
@@ -95,7 +107,7 @@
                                             </tr>
                                             @endforeach
 
-                                        
+
                                         </tbody>
 
                                     </table>
@@ -139,15 +151,26 @@
                                                class="w-full py-2 pl-2 pr-4 mt-2 text-sm border border-gray-400 rounded-lg sm:text-base focus:outline-none focus:border-blue-400"/>
                                     </div>
                                     <div class="w-full">
-                                        <label for="appointmentTime">Start</label>
+                                        <label for="Eventdate">Start</label>
                                                             <div class="mb-3 input-group">
                                                               <div class="input-group-prepend">
                                                                 <span class="input-group-text"></span>
                                                               </div>
                                                               <x-datepicker wire:model.defer="event.start" id="appointmentDate"/>
-            
+
                                     </div>
-                                <div class="ml-auto">
+                                    <div class="w-full">
+                                        <label class="block text-sm font-medium text-gray-700" for="title">
+                                            Status
+                                        </label>
+                                        <select wire:model.defer="event.status"
+                                            class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                            <option value="Scheduled">Scheduled</option>
+                                            <option value="Closed">Closed</option>
+
+                                        </select>
+                                    </div>
+
                                     <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
                                         type="submit">{{ $event->id ? 'Save Changes' : 'Save' }}
                                     </button>
