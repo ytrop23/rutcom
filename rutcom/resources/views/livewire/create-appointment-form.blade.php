@@ -78,7 +78,7 @@
                                         <div class="col-md-12">
                                             <div wire:ignore class="form-group">
                                                 <label for="note">Note:</label>
-                                                <textarea id="note" data-note="@this" wire:model.defer="state.note" class="form-control"></textarea>
+                                                <textarea id="note" wire:model.defer="state.note" class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>

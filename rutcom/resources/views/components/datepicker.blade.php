@@ -1,14 +1,24 @@
-@props(['id', 'error'])
+@props(['options' => []])
 
-<input {{ $attributes }} type="text" class="form-control datetimepicker-input @error($error) is-invalid @enderror" id="{{ $id }}" data-toggle="datetimepicker" data-target="#{{ $id }}"
-onchange="this.dispatchEvent(new InputEvent('input'))"
-/>
+@php
+    $options = array_merge([
+                    'dateFormat' => 'Y-m-d',
+                    'enableTime' => false,
+                    'altFormat' =>  'j F Y',
+                    'altInput' => true
+                    ], $options);
+@endphp
 
-
-@push('js')
-<script type="text/javascript">
-    $('#{{ $id }}').datetimepicker({
-    	format: 'L'
-    });
-</script>
-@endpush
+<div wire:ignore>
+    <input
+        x-data="{value: @entangle($attributes->wire('model')), instance: undefined}"
+        x-init="() => {
+                $watch('value', value => instance.setDate(value, true));
+                instance = flatpickr($refs.input, {{ json_encode((object)$options) }});
+            }"
+        x-ref="input"
+        x-bind:value="value"
+        type="text"
+        {{ $attributes->merge(['class' => 'form-input w-full rounded-md shadow-sm']) }}
+    />
+</div>

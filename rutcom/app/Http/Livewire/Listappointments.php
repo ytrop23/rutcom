@@ -4,15 +4,32 @@ namespace App\Http\Livewire;
 use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Appointment;
+use App\Models\Client;
 
 
 class Listappointments extends Component
 {
     use WithPagination;
+
+    protected $rules = [
+
+        'appointment.client_id' => 'required',
+        'appointment.date' => 'required',
+        'appointment.time' => 'required',
+        'appointment.note' => 'required',
+        'appointment.status'=>'required',
+
+
+
+
+
+    ];
+
     protected $listeners = ['deleteConfirmed' => 'deleteAppointment'];
-
+    public $showModal = false;
 	public $appointmentIdBeingRemoved = null;
-
+    public $appointment;
+    public $appointmentid;
 	public $status = null;
 
 	protected $queryString = ['status'];
@@ -93,6 +110,7 @@ class Listappointments extends Component
 	}
 
     public function edit($appointmentid){
+
         $this->showModal = true;
         $this->appointmentid= $appointmentid;
         $this->appointment = Appointment::find($appointmentid);
@@ -110,11 +128,24 @@ class Listappointments extends Component
         }
     }
 
+    public function close(){
+        $this->showModal = false;
+    }
+    public function save(){
+        $this->validate();
+
+        if (!is_null($this->appointmentid)) {
+            $this->appointment->save();
+        } else {
+            Client::create($this->appointment);
+        }
+        $this->showModal = false;
+    }
 
     public function render()
 
     {   $appointments = $this->appointments;
-
+        $clients = Client::all();
     	$appointmentsCount = Appointment::count();
     	$scheduledAppointmentsCount = Appointment::where('status', 'scheduled')->count();
     	$closedAppointmentsCount = Appointment::where('status', 'closed')->count();
@@ -124,6 +155,7 @@ class Listappointments extends Component
         	'appointmentsCount' => $appointmentsCount,
         	'scheduledAppointmentsCount' => $scheduledAppointmentsCount,
         	'closedAppointmentsCount' => $closedAppointmentsCount,
+            'clients' => $clients,
         ]);
 
     }

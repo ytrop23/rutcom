@@ -109,19 +109,80 @@
                         <div class="card-footer d-flex justify-content-end">
                           {!! $appointments->links() !!}
                         </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
                   <!-- /.row -->
-                </div><!-- /.container-fluid -->
-              </div>
+        </div><!-- /.container-fluid -->
+
+        <div class="@if (!$showModal) hidden @endif items-center justify-center fixed left-0 bottom-0 w-full h-full bg-gray-800 bg-opacity-90">
+            <div class="w-1/2 bg-white rounded-lg">
+                <form wire:submit.prevent="save" class="w-full">
+                    <div class="flex flex-col items-start p-4">
+                        <div class="flex items-center w-full pb-4 border-b">
+                            <div class="text-lg font-medium text-gray-900">{{ $appointment->id ? 'Edit User' : 'Add New User' }}</div>
+                            <svg wire:click="close"
+                                 class="w-6 h-6 ml-auto text-gray-700 cursor-pointer fill-current"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                <path
+                                    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
+                            </svg>
+                        </div>
+                        <div class="w-full">
+                            <label for="client">Client:</label>
+                            <select wire:model.defer="appointment.client_id" class="form-control">
+                                <option value="">Select Client</option>
+                                @foreach($clients as $client)
+                                    <option value="{{ $client->id }}">{{ $client->name }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                        <div class="w-full">
+                            <label for="appointmentTime">Appointment Date</label>
+                                                <div class="mb-3 input-group">
+                                                  <div class="input-group-prepend">
+                                                    <span class="input-group-text"></span>
+                                                  </div>
+                                                  <x-datepicker wire:model.defer="appointment.date" id="appointmentDate"/>
+
+                        </div>
+                        <div class="w-full">
+                            <label for="appointmentTime">Appointment Time</label>
+                                                <div class="mb-3 input-group">
+                                                  <div class="input-group-prepend">
+                                                    <span class="input-group-text"></span>
+                                                  </div>
+                                                  <x-timepicker wire:model.defer="appointment.time" id="appointmentTime"/>
+                                                  </div>
+                        </div>
+
+                        <div class="w-full">
+                            <label for="note">Note:</label>
+                            <textarea id="note" wire:model.defer="appointment.note" class="form-control"></textarea>
+                        </div>
+                        <div class="w-full">
+                            <label class="block text-sm font-medium text-gray-700" for="title">
+                                Status
+                            </label>
+                            <select wire:model.defer="appointment.status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <option value="Scheduled">Scheduled</option>
+                                <option value="Closed">Closed</option>
+
+                            </select>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+                                    type="submit">{{ $appointment->id ? 'Save Changes' : 'Save' }}
+                            </button>
+                            <button class="px-4 py-2 font-bold text-white bg-gray-500 rounded"
+                                    wire:click="close"
+                                    type="button"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+ </div>
         </div>
-
-
-
-
-
-
-
-    </div>
-</div>
