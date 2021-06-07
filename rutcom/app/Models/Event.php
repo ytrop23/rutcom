@@ -11,7 +11,7 @@ class Event extends Model
     protected $fillable = [
         'title',
         'start',
-        'status',
+        'status'
 
     ];
     public function getDateAttribute($value)

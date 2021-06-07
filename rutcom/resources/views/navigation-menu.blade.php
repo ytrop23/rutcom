@@ -3,7 +3,7 @@
 
     ['href' => '/dashboard','name'=>'dashborad','text'=>'Dashboard'],
     ['href'=>'/users','name'=>'users','text'=>'Users'],
-    ['href'=>'/calendar','name'=>'calendar','text'=>'Calendar'],
+    ['href'=>'/tasks','name'=>'tasks','text'=>'Tasks'],
     ['href'=>'/appointments','name'=>'appointments','text'=>'Appointments'],
     ['href'=>'/clients','name'=>'clients','text'=>'Clients'],
     ['href'=>'/timecontrol','name'=>'timecontrol','text'=>'TimeControl'],

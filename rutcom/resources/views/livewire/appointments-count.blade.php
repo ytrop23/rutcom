@@ -2,7 +2,7 @@
 [
     ['href' => '/dashboard','name'=>'dashborad','text'=>'Dashboard'],
     ['href'=>'/users','name'=>'users','text'=>'Users'],
-    ['href'=>'/calendar','name'=>'calendar','text'=>'Calendar'],
+    ['href'=>'/tasks','name'=>'tasks','text'=>'Tasks'],
     ['href'=>'/appointments','name'=>'appointments','text'=>'Appointments'],
     ['href'=>'/clients','name'=>'clients','text'=>'Clients'],
     ['href'=>'/timecontrol','name'=>'timecontrol','text'=>'TimeControl'],
@@ -140,7 +140,7 @@
                         <div class="p-5">
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
-                                    <h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3>
+                                    <h3 wire:loading.delay.remove>{{ $eventsCount }}</h3>
                                     <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
                                         <option value="scheduled">Scheduled</option>
@@ -150,12 +150,15 @@
 
                                 <div
                                     class="flex h-6 px-2 text-sm font-semibold justify-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-400 h-7 w-7"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-600 h-7 w-7"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                                </svg>
                                 </div>
                             </div>
                             <div class="flex-1 w-full ml-2">
