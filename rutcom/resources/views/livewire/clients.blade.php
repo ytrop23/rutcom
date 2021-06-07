@@ -48,9 +48,13 @@
             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                 DNI
               </th>
-            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-              Address
-            </th>
+
+              <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Address
+              </th>
+              <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Status
+              </th>
             <th scope="col" class="relative px-6 py-3">
               <span class="sr-only">Edit</span>
             </th>
@@ -78,6 +82,19 @@
               </td>
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="text-sm text-gray-500">{{ $client->address}}</div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="flex items-center">
+                        {{ $client->status}}
+                    </span>
+                </div>
             </td>
 
             <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
@@ -158,8 +175,8 @@
                         Status
                     </label>
                     <select wire:model.defer="client.status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                        <option value="User">VIP</option>
-                        <option value="Admin">Potencial</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Potential">Potential</option>
 
                     </select>
                 </div>
