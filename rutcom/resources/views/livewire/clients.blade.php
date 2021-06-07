@@ -51,9 +51,6 @@
             <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
               Address
             </th>
-            <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                Active
-              </th>
             <th scope="col" class="relative px-6 py-3">
               <span class="sr-only">Edit</span>
             </th>
@@ -82,13 +79,10 @@
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="text-sm text-gray-500">{{ $client->address}}</div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                @livewire('toggle-button', [
-                    'model' => $client,
-                    'field' => 'active',
-                ])
-              </td>
+
             <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                <a class="inline-flex items-center h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-gray-800 rounded-lg focus:shadow-outline hover:bg-gray-800"
+                href="{{ route('clients.active') }}">Active</a>
                 <button
                 class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
                 wire:click.prevent="edit({{ $client->id }})">Edit

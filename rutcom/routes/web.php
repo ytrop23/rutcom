@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\UsersTable;
 use App\Http\Livewire\Clients;
-
+use App\Http\Livewire\ClientActive;
 use App\Http\Livewire\Calendar;
 use App\Http\Controllers\TimeControl;
 use App\Http\Livewire\Tasks;
@@ -50,3 +50,4 @@ Route::get('appointments/create', CreateAppointmentForm::class)->name('appointme
 Route::get('calendar', Calendar::class)->name('calendar');
 Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointments.edit');
 Route::get('users/permits', UserPermits::class)->name('users.permits');
+Route::get('clients/active', ClientActive::class)->name('clients.active');
