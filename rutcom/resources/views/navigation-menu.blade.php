@@ -18,7 +18,7 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block w-auto h-9" />
+                        <img class="w-12 h-12 mr-2 overflow-hidden rounded-md md:w-10 md:h-10" src="{{ url('img/logo final.png') }}" />
                     </a>
                 </div>
 

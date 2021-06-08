@@ -42,7 +42,7 @@
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
                                     <h3 wire:loading.delay.remove>{{ $usersCount }}</h3>
-                                    <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
+                                    <select wire:change="getUsersCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
                                         <option value="User">User</option>
                                         <option value="Admin">Admin</option>
@@ -74,10 +74,10 @@
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
                                     <h3 wire:loading.delay.remove>{{ $clientsCount}}</h3>
-                                    <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
+                                    <select wire:change="getClientsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
-                                        <option value="scheduled">Potential</option>
-                                        <option value="closed">VIP</option>
+                                        <option value="Potential">Potential</option>
+                                        <option value="VIP">VIP</option>
                                     </select>
                                 </div>
 
@@ -109,7 +109,7 @@
                             <div class="flex justify-between">
                                 <div class="d-flex justify-content-between">
                                     <h3 wire:loading.delay.remove>{{ $appointmentsCount }}</h3>
-                                    <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
+                                    <select wire:change="getEventsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
                                         <option value="scheduled">Scheduled</option>
                                         <option value="closed">Closed</option>
@@ -143,8 +143,8 @@
                                     <h3 wire:loading.delay.remove>{{ $eventsCount }}</h3>
                                     <select wire:change="getAppointmentsCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 border-0 rounded">
                                         <option value="">All</option>
-                                        <option value="scheduled">Scheduled</option>
-                                        <option value="closed">Closed</option>
+                                        <option value="Scheduled">Scheduled</option>
+                                        <option value="Closed">Closed</option>
                                     </select>
                                 </div>
 

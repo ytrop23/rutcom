@@ -19,7 +19,7 @@
                       </div>
                 </div>
                 <div class="mb-5 text-right col-md-12">
-                    <a class= 'inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25'href="javascript:void(0)" id="Fichaje"> Fichaje</a>
+                    <a class= 'inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-green-700 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25'href="javascript:void(0)" id="Fichaje"> Fichaje</a>
                 </div>
                 <div class="col-md-12">
                     <table class="table table-bordered data-table">
