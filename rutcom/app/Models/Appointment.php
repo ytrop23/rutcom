@@ -9,6 +9,7 @@ class Appointment extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'client_id',
         'date',
         'time',
@@ -22,8 +23,12 @@ class Appointment extends Model
     {
     	return $this->belongsTo(Client::class);
     }
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
 
-   
+
 
     public function getDateAttribute($value)
     {

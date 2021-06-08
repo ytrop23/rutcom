@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Appointment;
 use App\Models\Client;
+use App\Models\User;
 use Livewire\Component;
 
 
@@ -17,7 +18,7 @@ class CreateAppointmentForm extends Component
 	{
 		Validator::make(
 			$this->state,
-			[
+			[   'user_id'=>'required',
 				'client_id' => 'required',
 				'date' => 'required',
 				'time' => 'required',
@@ -38,9 +39,12 @@ class CreateAppointmentForm extends Component
 	}
 
     public function render()
+
     {   $clients = Client::all();
+        $users=User::all();
         return view('livewire.create-appointment-form', [
         	'clients' => $clients,
+            'users'=>$users,
         ]);
     }
 }

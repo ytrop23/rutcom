@@ -70,6 +70,7 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Time</th>
                                         <th scope="col">Status</th>
+                                        <th scope="col">Assigned</th>
                                         <th scope="col">Options</th>
                                       </tr>
                                     </thead>
@@ -89,6 +90,7 @@
                                 <td>
                                   <span class="badge badge-{{ $appointment->status_badge }}">{{ $appointment->status }}</span>
                                 </td>
+                                <td>{{ $appointment->user->name }}</td>
                                         <td>
                                             <button
                                             class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
@@ -127,6 +129,16 @@
                                 <path
                                     d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
                             </svg>
+                        </div>
+                        <div class="w-full">
+                            <label for="user">Assigned:</label>
+                            <select wire:model.defer="appointment.user_id" class="form-control">
+                                <option value="">Select User</option>
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+
                         </div>
                         <div class="w-full">
                             <label for="client">Client:</label>

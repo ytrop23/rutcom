@@ -34,13 +34,25 @@
                                                     </div>
                                                 @enderror
                                             </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="user">Assigned:</label>
+                                            <select wire:model.defer="state.user_id"
+                                                class="form-control @error('user_id') is-invalid @enderror">
+                                                <option value="">Select User</option>
+                                                @foreach ($users as $user)
+                                                    <option value="{{ $user->id }}">{{ $user->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
-                                    @error('status')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    </div>
+
+
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">

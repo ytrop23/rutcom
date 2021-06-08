@@ -5,6 +5,7 @@ use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Appointment;
 use App\Models\Client;
+use App\Models\User;
 
 
 class Listappointments extends Component
@@ -12,7 +13,7 @@ class Listappointments extends Component
     use WithPagination;
 
     protected $rules = [
-
+        'appointment.user_id' => 'required',
         'appointment.client_id' => 'required',
         'appointment.date' => 'required',
         'appointment.time' => 'required',
@@ -137,7 +138,8 @@ class Listappointments extends Component
         if (!is_null($this->appointmentid)) {
             $this->appointment->save();
         } else {
-            Client::create($this->appointment);
+            Appointment::create($this->appointment);
+
         }
         $this->showModal = false;
     }
@@ -146,6 +148,7 @@ class Listappointments extends Component
 
     {   $appointments = $this->appointments;
         $clients = Client::all();
+        $user=User::all();
     	$appointmentsCount = Appointment::count();
     	$scheduledAppointmentsCount = Appointment::where('status', 'scheduled')->count();
     	$closedAppointmentsCount = Appointment::where('status', 'closed')->count();
@@ -156,6 +159,7 @@ class Listappointments extends Component
         	'scheduledAppointmentsCount' => $scheduledAppointmentsCount,
         	'closedAppointmentsCount' => $closedAppointmentsCount,
             'clients' => $clients,
+            'users' =>$user,
         ]);
 
     }

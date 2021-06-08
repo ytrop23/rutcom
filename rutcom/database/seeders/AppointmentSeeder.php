@@ -15,12 +15,13 @@ class AppointmentSeeder extends Seeder
     public function run()
     {
         Appointment::create([
+            'user_id'=>1,
             'client_id' => 1,
             'date' =>  Carbon::parse('2000-01-01'),
             'time' => Carbon::parse('11:00'),
             'status'=>'SCHEDULED',
                  'note' => null
 
-                 ]);                                                                                                                                                                                                                         
+                 ]);
      }
     }
