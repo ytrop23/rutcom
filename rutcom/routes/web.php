@@ -5,6 +5,7 @@ use App\Http\Livewire\UsersTable;
 use App\Http\Livewire\Clients;
 use App\Http\Livewire\ClientActive;
 use App\Http\Livewire\ClientsExcel;
+use App\Http\Livewire\ClientsMap;
 use App\Http\Livewire\Calendar;
 use App\Http\Controllers\TimeControl;
 use App\Http\Livewire\Tasks;
@@ -53,3 +54,4 @@ Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointment
 Route::get('users/permits', UserPermits::class)->name('users.permits');
 Route::get('clients/active', ClientActive::class)->name('clients.active');
 Route::get('clients/export', ClientsExcel::class)->name('clients.export');
+Route::get('routes/clients', ClientsMap::class)->name('clients.routes');

@@ -31,6 +31,7 @@ class ClientsExcel extends Component
 
         return Excel::download(new ClientExport($this->selectedClients), 'clients.' . $ext);
     }
+
     public function render()
     {
         return view('livewire.clients-excel');

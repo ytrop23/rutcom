@@ -4,13 +4,10 @@ namespace App\Http\Livewire;
 use App\Models\Client;
     use Livewire\WithPagination;
     use Illuminate\Support\Facades\Auth;
-use Livewire\Component;
+    use Livewire\Component;
 
 class ClientActive extends Component
 {
-
-
-
           use WithPagination;
 
             public $showModal = false;
