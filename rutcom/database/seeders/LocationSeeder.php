@@ -15,8 +15,9 @@ class LocationSeeder extends Seeder
     {
         Location::create([
             'client_id' => '1',
-            'latitude' => '19.2675991',
-            'longitude' => '-103.7132034',
+            'latitude' => '40.96492646372465',
+            'longitude' => '-5.664112811746819',
+            'content'=>'Salamanca'
         ]);
     }
 }

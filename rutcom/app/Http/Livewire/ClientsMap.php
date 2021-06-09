@@ -12,12 +12,12 @@ class ClientsMap extends Component
     public function render()
     {   $location=Location::all();
 
-        Mapper::map(0, 0);
+        Mapper::map(37.02700, -4.53864);
 
         foreach ($location as $value) {
-            Mapper::marker($value->latitude, $value->longitude);
+            Mapper::informationWindow($value->latitude, $value->longitude,$value->content);
                  }
-Mapper::informationWindow(53.381128999999990000, -1.470085000000040000, 'Content');
+
         return view('livewire.clients-map');
     }
 }
