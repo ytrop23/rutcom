@@ -42,10 +42,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/tasks', Tasks::class
 )->name('tasks');
 Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Listappointments::class
 )->name('appointments');
-Route::middleware(['auth:sanctum', 'verified'])->get('/routes', RutcomMap::class
+Route::middleware(['auth:sanctum', 'verified'])->get('/routesMap', RutcomMap::class
+)->name('routeMap');
+Route::middleware(['auth:sanctum', 'verified'])->get('routes', ClientsMap ::class
 )->name('routes');
-//Route::middleware(['auth:sanctum', 'verified'])->get('users/permits', UserPermits ::class
-//)->name('users/permits');
 
 Route::resource('timecontrol',TimeControl::class);
 Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
@@ -54,4 +54,4 @@ Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointment
 Route::get('users/permits', UserPermits::class)->name('users.permits');
 Route::get('clients/active', ClientActive::class)->name('clients.active');
 Route::get('clients/export', ClientsExcel::class)->name('clients.export');
-Route::get('routes/clients', ClientsMap::class)->name('clients.routes');
+
