@@ -45,9 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Listappoin
 )->name('appointments');
 Route::middleware(['auth:sanctum', 'verified'])->get('/routesMap', RutcomMap::class
 )->name('routeMap');
-Route::middleware(['auth:sanctum', 'verified'])->get('routesClients', ClientsMap ::class
-)->name('routesClients');
-Route::middleware(['auth:sanctum', 'verified'])->get('routes', TableLocation ::class
+Route::middleware(['auth:sanctum', 'verified'])->get('/routes', TableLocation ::class
 )->name('routes');
 
 
@@ -57,5 +55,5 @@ Route::get('calendar', Calendar::class)->name('calendar');
 Route::get('users/permits', UserPermits::class)->name('users.permits');
 Route::get('clients/active', ClientActive::class)->name('clients.active');
 Route::get('clients/export', ClientsExcel::class)->name('clients.export');
-Route::get('routes/create', CreateLocationForm::class)->name('route.create');
-
+Route::get('routes/create', CreateLocationForm::class)->name('routes.create');
+Route::get('routes/clients', ClientsMap::class)->name('routes.map');

@@ -34,21 +34,18 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="locationDate">Location Longitude</label>
+                                                <label for="locationDate">Location Latitude</label>
                                                 <div class="mb-3 input-group">
-                                                    <input wire:model.defer="state.longitude" id="locationDate">
+                                                    <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"type="text"wire:model.defer="state.latitude" id="locationDate">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="locationTime">Location Latitude</label>
+                                                <label for="locationTime">Location Longitude</label>
                                                 <div class="mb-3 input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i
-                                                                class="fas fa-clock"></i></span>
-                                                    </div>
-                                                    <input wire:model.defer="state.latitude" id="locationlatitude">
+
+                                                    <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"type="text" wire:model.defer="state.longitude" id="locationlatitude">
                                                 </div>
                                             </div>
                                         </div>
@@ -56,7 +53,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div wire:ignore class="form-group">
-                                                <label for="note">Note:</label>
+                                                <label for="note">Tag</label>
                                                 <textarea id="note" wire:model.defer="state.content"
                                                     class="form-control"></textarea>
                                             </div>

@@ -36,7 +36,12 @@
                                         @endif
                                     </div>
 
+                                    <div class="flex justify-between mt-8 text-xl">
+                                        <a href="{{ route('routes.create') }}">
 
+                                            <button class= 'inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25'> Add New Location</button>
+                                          </a>
+                                    </div>
                                     @if ($locations->count())
 
 
@@ -86,7 +91,7 @@
 
                                                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                                                     <a class="inline-flex items-center h-8 px-4 m-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-green-700 border border-transparent rounded-md hover:bg-green-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
-                                                        href="">View</a>
+                                                        href="{{ route('routes.map') }}">View</a>
                                                     <button
                                                         class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25"
                                                         wire:click.prevent="edit({{ $location->id }})">Edit
