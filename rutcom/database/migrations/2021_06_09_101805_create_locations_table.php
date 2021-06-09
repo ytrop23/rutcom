@@ -18,6 +18,7 @@ class CreateLocationsTable extends Migration
             $table->foreignId('client_id')->constrained();
             $table->decimal('latitude')->nullable();
             $table->decimal('longitude')->nullable();
+            $table->string('content')->nullable();
             $table->timestamps();
         });
     }

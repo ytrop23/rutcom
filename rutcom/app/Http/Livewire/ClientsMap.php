@@ -17,7 +17,7 @@ class ClientsMap extends Component
         foreach ($location as $value) {
             Mapper::marker($value->latitude, $value->longitude);
                  }
-
+Mapper::informationWindow(53.381128999999990000, -1.470085000000040000, 'Content');
         return view('livewire.clients-map');
     }
 }

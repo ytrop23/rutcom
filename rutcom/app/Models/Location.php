@@ -13,6 +13,7 @@ class Location extends Model
         'client_id',
         'latitude',
         'longitude',
+        'content'
 
         ];
 

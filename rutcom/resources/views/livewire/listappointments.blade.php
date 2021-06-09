@@ -141,16 +141,6 @@
 
                         </div>
                         <div class="w-full">
-                            <label for="client">Client:</label>
-                            <select wire:model.defer="appointment.client_id" class="form-control">
-                                <option value="">Select Client</option>
-                                @foreach($clients as $client)
-                                    <option value="{{ $client->id }}">{{ $client->name }}</option>
-                                @endforeach
-                            </select>
-
-                        </div>
-                        <div class="w-full">
                             <label for="appointmentTime">Appointment Date</label>
                                                 <div class="mb-3 input-group">
                                                   <div class="input-group-prepend">

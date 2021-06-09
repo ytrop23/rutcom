@@ -6,14 +6,15 @@ use App\Http\Livewire\Clients;
 use App\Http\Livewire\ClientActive;
 use App\Http\Livewire\ClientsExcel;
 use App\Http\Livewire\ClientsMap;
+use App\Http\Livewire\TableLocation;
 use App\Http\Livewire\Calendar;
 use App\Http\Controllers\TimeControl;
 use App\Http\Livewire\Tasks;
 use App\Http\Livewire\Listappointments;
 use App\Http\Livewire\RutcomMap;
 use App\Http\Livewire\UserPermits;
-use App\Http\Livewire\CreateAppointmentForm ;
-use App\Http\Livewire\UpdateAppointmentForm ;
+use App\Http\Livewire\CreateAppointmentForm;
+use App\Http\Livewire\CreateLocationForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,14 +45,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/appointments', Listappoin
 )->name('appointments');
 Route::middleware(['auth:sanctum', 'verified'])->get('/routesMap', RutcomMap::class
 )->name('routeMap');
-Route::middleware(['auth:sanctum', 'verified'])->get('routes', ClientsMap ::class
+Route::middleware(['auth:sanctum', 'verified'])->get('routesClients', ClientsMap ::class
+)->name('routesClients');
+Route::middleware(['auth:sanctum', 'verified'])->get('routes', TableLocation ::class
 )->name('routes');
+
 
 Route::resource('timecontrol',TimeControl::class);
 Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
 Route::get('calendar', Calendar::class)->name('calendar');
-Route::get('appointments/edit', UpdateAppointmentForm::class)->name('appointments.edit');
 Route::get('users/permits', UserPermits::class)->name('users.permits');
 Route::get('clients/active', ClientActive::class)->name('clients.active');
 Route::get('clients/export', ClientsExcel::class)->name('clients.export');
+Route::get('routes/create', CreateLocationForm::class)->name('route.create');
 
