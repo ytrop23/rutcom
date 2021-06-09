@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center min-h-screen pt-6 bg-gray-100 sm:justify-center sm:pt-0">
     <div>
         <div class="flex items-center justify-center mt-5 mb-10">
-            <img src="{{ url('img/logologin.png') }}" />
+            <img class="mr-4 w-36 h-36" src="{{ url('img/logologin.png') }}" />
         </div>
     </div>
 
