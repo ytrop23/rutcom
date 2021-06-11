@@ -58,10 +58,7 @@
                                             <div class="form-group">
                                                 <label for="appointmentDate">Appointment Date</label>
                                                 <div class="mb-3 input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i
-                                                                class="fas fa-calendar"></i></span>
-                                                    </div>
+
                                                     <x-datepicker wire:model.defer="state.date" id="appointmentDate"
                                                         :error="'date'" />
                                                     @error('date')
@@ -77,10 +74,7 @@
                                             <div class="form-group">
                                                 <label for="appointmentTime">Appointment Time</label>
                                                 <div class="mb-3 input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i
-                                                                class="fas fa-clock"></i></span>
-                                                    </div>
+
                                                     <x-timepicker wire:model.defer="state.time" id="appointmentTime"
                                                         :error="'time'" />
                                                     @error('time')

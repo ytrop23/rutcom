@@ -47,8 +47,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/routesMap', RutcomMap::cl
 )->name('routeMap');
 Route::middleware(['auth:sanctum', 'verified'])->get('/routes', TableLocation ::class
 )->name('routes');
-
-
 Route::resource('timecontrol',TimeControl::class);
 Route::get('appointments/create', CreateAppointmentForm::class)->name('appointments.create');
 Route::get('calendar', Calendar::class)->name('calendar');

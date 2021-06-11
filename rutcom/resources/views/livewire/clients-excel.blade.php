@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 <div>
-    <div class="px-4 py-3 mb-4 leading-normal rounded-lg text-white-700 bg-white-100" role="alert">
+    <div class="px-4 py-3 mb-4 leading-normal rounded-lg text-white-700 bg-white-100" role="alert" role_id="1">
 
     </div>
 

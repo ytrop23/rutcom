@@ -5,9 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\Client;
 use Livewire\Component;
 use App\Exports\ClientExport;
-use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ClientsExcel extends Component
 {
@@ -32,8 +32,13 @@ class ClientsExcel extends Component
         return Excel::download(new ClientExport($this->selectedClients), 'clients.' . $ext);
     }
 
-    public function render()
-    {
+    public function render(){
+    $role=Auth::user()->role_id;
+    if($role =='1'){
         return view('livewire.clients-excel');
+        }
+     else{
+        return  abort(403);
+    }
     }
 }
