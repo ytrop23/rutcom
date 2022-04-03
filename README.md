@@ -1,4 +1,4 @@
-# rutcom
+# Rutcom
 **Índice**
 
 - [1. Introducción](https://github.com/dhurtadorosales/Final-Project-DAW/blob/master/README.md#introduccion)
